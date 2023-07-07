@@ -5,17 +5,19 @@ const Icon = () => {
     <div>
       <Main>
         <div
-          style={{
-            width: "100px",
-            height: "100px",
-            backgroundColor: "darkorange",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: "50%",
-          }}
+          style={
+            {
+              width: "100px",
+              height: "100px",
+              backgroundColor: "darkorange",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "50%",
+            }
+          }
         >
-          <p>Joan</p>
+          <p>BOX</p>
         </div>
       </Main>
     </div>

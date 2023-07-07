@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import Icon from "../../blocks/components/graphic/Icon";
 import { selector, useRecoilValue } from "recoil";
 import { IconState } from "../../util/state/Recoil";
 
@@ -19,16 +18,18 @@ const Leve24 = () => {
 
   return (
     <Container>
-      <Column>
-        {numberOFJoan.map((e) => (
-          <Box key={e}></Box>
-        ))}
-      </Column>
       <Wrapper value={count}>
         {numberOFJoan.map((e) => (
-          <Icon key={e} />
+          <Wrap key={e}>
+            <Box>s</Box>
+          </Wrap>
         ))}
       </Wrapper>
+      <Column>
+        {numberOFJoan.map((e) => (
+          <Icon key={e}></Icon>
+        ))}
+      </Column>
     </Container>
   );
 };
@@ -36,10 +37,29 @@ const Leve24 = () => {
 export default Leve24;
 
 const Box = styled.div`
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Icon = styled.div`
   width: 18%;
   height: 18%;
-  margin: 2px;
+  margin: 3px;
   background-color: red;
+`;
+
+const Wrap = styled.div`
+  width: 18%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 18%;
+  margin: 3px;
 `;
 
 const Container = styled.div`
@@ -47,24 +67,27 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   position: relative;
 `;
 const Wrapper = styled.div<{ value: string }>`
-  display: flex;
-  width: 100%;
+  width: 91%;
   height: 100%;
-  padding: 1em;
-  flex-wrap: wrap;
-  ${(props) => props.value};
+  display: flex;
+
+  padding: 2em;
   position: absolute;
+  z-index: 999;
+
+  ${(props) => props.value};
 `;
 const Column = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column-reverse;
   flex-wrap: wrap-reverse;
   align-content: space-between;
   justify-content: center;
-  height: 100%;
-  padding: 1em;
+  padding: 2em;
 `;
